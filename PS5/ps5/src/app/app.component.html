@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div>
+
+<!-- I am aware as to how we can change the variable name contact and contacts. I'm just being lazy. -->
+  <ul>
+  <li *ngFor="let contact of contacts">
+    <label (click)="selectContact(contact)">{{contact.city}} ({{contact.state}})</label>
+  </li>
+  </ul>
+
+</div>
+
+<div *ngIf="selectedContact">
+  <h3>Information pertaining to: {{selectedContact.city}} </h3>
+  <p>This city is located in the state of: {{selectedContact.state}}</p>
+</div>
+
+
+<router-outlet></router-outlet>
