@@ -39,7 +39,7 @@ router.post('/zip', (req, res) => {
                 .then(function (body) {
                     console.log(body);
                     mongo.collection('zipcode').insertOne(req.body, function (err, r) {
-                        res.send('success');
+                        res.send(JSON.parse(body));
                     });
                 })
                 .catch(function (err) {
